@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Inyectar por dependencia el string de conexion a la db
 builder.Services.AddDbContext<infojobsContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("infojobConnection")));
 
 var app = builder.Build();
