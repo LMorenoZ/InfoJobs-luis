@@ -68,7 +68,24 @@
     <h4 class="text-center mt-3 p-2">TOP TRABAJOS MÁS SOLICITADOS</h4>
     <div class="container-fluid p-3">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
+
+            @foreach (var trabajo in (IEnumerable<dynamic>) ViewData["TrabajosTop"])
+            {
+                <div class="col">
+                    <div class="card">
+                        <img src="@trabajo.imagen" id="imagen" class="card-img-top img-fluid figure-img" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@trabajo.trabajo</h5>
+                            <p class="card-text">
+                                @trabajo.empresa  @trabajo.salario
+                            </p>
+                            <a href="#" class="azul btn text-light">Leer más...</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!--    <div class="col">
                 <div class="card">
                     <img src="/img/images.jfif" id="imagen" class="card-img-top img-fluid figure-img" alt="...">
                     <div class="card-body">
@@ -109,6 +126,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
 </section>

@@ -7,14 +7,27 @@ namespace InfoJobs.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly infojobsContext _infojobsContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, infojobsContext infojobsContext)
         {
             _logger = logger;
+            _infojobsContext = infojobsContext;
         }
 
         public IActionResult Index()
         {
+
+            var trabajosMasSolicitados = (from t in _infojobsContext.trabajos
+                                          select new
+                                          {
+                                              trabajo = t.nombre,
+                                              empresa = t.nombre_empresa,
+                                              salario = t.salario,
+                                              imagen = t.imagen
+                                          }).ToList();
+            ViewData["TrabajosTop"] = trabajosMasSolicitados;
+
             return View();
         }
 

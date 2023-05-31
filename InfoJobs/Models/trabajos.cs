@@ -27,5 +27,7 @@ namespace InfoJobs.Models
         public string experiencia { get; set; }
 
         public string contrato { get; set; }
+
+        public string imagen { get; set; }  
     }
 }
