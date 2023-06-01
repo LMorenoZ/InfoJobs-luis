@@ -1,4 +1,6 @@
-﻿@{
+﻿@model InfoJobs.Models.trabajos
+
+@{
     ViewData["Title"] = "Empleo Especifico-InfoJobs";
 }
 
@@ -11,24 +13,24 @@
             <div class="col-md-3 col-sm-12">
                 <div class="card align-items-center pt-2 my-5 pb-2 px-3">
                     <div>
-                        <img class="m-3" src="./img/pizzaHut.png" alt="" height="200" width="200">
+                        <img class="m-3" src="@Html.DisplayFor(trabajo => trabajo.imagen)" alt="" height="200" width="200">
                     </div>
                     <div>
-                        <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, error explicabo. Ex unde earum dolorum corporis illo, placeat aliquam ratione odio saepe, accusantium iure rem fuga nihil, temporibus fugit atque esse cupiditate quisquam adipisci soluta quas.</p>
+                        <p class="">@Html.DisplayFor(trabajo => trabajo.descripcion)</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="card mt-5">
                     <div>
-                        <h2 class="mx-4 mt-3 text-start">Detalles del empleo</h2>
+                        <h2 class="mx-4 mt-3 text-start">@Html.DisplayFor(trabajo => trabajo.nombre)</h2>
                     </div>
                     <div>
                         <p class="p-4">
-                            necessitatibus apsapiente perferendis repelleni culpa rem modi tempora repudiandae veritatis illo expedita. Aliquam aliquid sunt molestiae doloremque, nam impedit beatae dolores perspiciatis expedita deleniti illum ad totam? Quidem tempore perspiciatis
-                            ducimus ab a tenetur atque voluptates velit? Nihil officia cupiditate consequuntur voluptas esse nostrum harum inventore? Necessitatibus, adipisci, labore odio amet veniam architecto ad esse at minima ea fugiat modi deserunt explicabo inventore quam ipsum exercitationem voluptate
-                            quisquam, perspiciatis accusantium. Maxime exercitationem, dolores quibusdam ea ab nemo voluptatum tenetur neque ex distinctio. Explicabo, enim! Unde totam pariatur, dignissimos debitis similique deserunt corporis nihil, fugit nesciunt molestiae corrupti quod sequi officia alias
-                            excepturi minima est nulla sint, natus reiciendis accusamus voluptates! Labore, quasi aut pariatur exercitationem beatae unde similique voluptate, reprehenderit incidunt sapiente, asperiores soluta aperiam quas?
+                            <strong>Empleador:</strong> @Html.DisplayFor(trabajo => trabajo.nombre_empresa) <br />
+                            <strong>La descripcion:</strong> @Html.DisplayFor(trabajo => trabajo.nombre) <br />
+                            <strong>Salario:</strong> $ @Html.DisplayFor(trabajo => trabajo.salario) <br />
+                            <strong>Publicado el:</strong> @Html.DisplayFor(trabajo => trabajo.fecha_publicacion)
                         </p>
                     </div>
                 </div>
@@ -50,11 +52,15 @@
                     </div>
                     <div>
                         <p class="p-4">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis alias excepturi illo distinctio deleniti adipisci impedit, nostrum saepe! Odit numquam dolore reiciendis unde nisi itaque ducimus dignissimos suscipit blanditiis, necessitatibus aperiam accusamus quod quas voluptatibus rerum animi adipisci cupiditate a fugit. Facilis nam ut modi nemo accusantium,
-                            quisquam eos corporis quaerat, porro voluptatibus animi minima. Eos voluptas, sapiente perferendis repellendus quo, doloremque architecto ex expedita, nostrum doloribus ut eum nulla debitis odio laudantium ducimus fugit ea! Eaque magni culpa rem modi tempora repudiandae veritatis illo expedita. Aliquam aliquid sunt molestiae doloremque, nam impedit beatae dolores perspiciatis
-                            expedita deleniti illum ad totam? Quidem tempore perspiciatis ducimus ab a tenetur atque voluptates velit? Nihil officia cupiditate consequuntur voluptas esse nostrum harum inventore? Necessitatibus, adipisci, labore odio amet veniam architecto ad esse at minima ea fugiat modi deserunt explicabo inventore quam ipsum exercitationem voluptate quisquam, perspiciatis accusantium.
-                            Maxime exercitationem, dolores quibusdam ea ab nemo voluptatum tenetur neque ex distinctio. Explicabo, enim! Unde totam pariatur, dignissimos debitis similique deserunt corporis nihil, fugit nesciunt molestiae corrupti quod sequi officia alias excepturi minima est nulla sint, natus reiciendis accusamus voluptates! Labore, quasi aut pariatur exercitationem beatae unde similique
-                            voluptate, reprehenderit incidunt sapiente, asperiores soluta aperiam quas?
+                            @Html.DisplayFor(trabajo => trabajo.experiencia)
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="mx-4 mt-3 text-start">Contrato</h2>
+                    </div>
+                    <div>
+                        <p class="p-4">
+                            @Html.DisplayFor(trabajo => trabajo.contrato)
                         </p>
                     </div>
                 </div>

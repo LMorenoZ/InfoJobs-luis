@@ -1,6 +1,7 @@
 ﻿using InfoJobs.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfoJobs.Controllers
 {
@@ -33,5 +34,7 @@ namespace InfoJobs.Controllers
 
             return RedirectToAction("Index");
         }
+
+
     }
 }
